@@ -52,6 +52,9 @@
             padding-bottom: 16px;
             margin-bottom: 16px;
             border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .nav-title {
@@ -745,49 +748,66 @@
         }
 
         .timer-container {
-            position: fixed;
-            top: 16px;
-            right: 16px;
-            z-index: 1000;
+            width: 100%;
         }
 
         .timer-display {
-            background: white;
-            border: 1px solid var(--gray-200);
-            border-radius: 8px;
-            padding: 12px 16px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            justify-content: space-between;
+            padding: 10px 12px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .timer-display:hover {
+            border-color: var(--gray-300);
+            background: white;
         }
 
         #timer {
-            font-family: monospace;
-            font-size: 1.2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--gray-800);
             min-width: 85px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            text-align: center;
         }
 
         #timer.warning {
             color: var(--danger);
+            background: #fef2f2;
+            border-color: var(--danger);
         }
 
         .timer-btn {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 6px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s;
             font-size: 0.875rem;
+            min-width: 80px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .timer-btn:hover {
             background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .timer-btn:active {
+            transform: translateY(0);
         }
 
         .timer-btn.paused {
@@ -796,6 +816,23 @@
 
         .timer-btn.paused:hover {
             background: var(--gray-700);
+        }
+
+        @media (max-width: 768px) {
+            .timer-display {
+                padding: 8px 10px;
+            }
+
+            #timer {
+                font-size: 1rem;
+                min-width: 75px;
+            }
+
+            .timer-btn {
+                padding: 6px 12px;
+                min-width: 70px;
+                font-size: 0.8rem;
+            }
         }
 
         .nav-buttons {
@@ -954,6 +991,13 @@
                 <div>Progress: <span id="progress">0/0</span></div>
                 <div>Correct: <span id="correct-count">0</span></div>
                 <div>Incorrect: <span id="incorrect-count">0</span></div>
+            </div>
+            <!-- Move timer display here -->
+            <div class="timer-container">
+                <div class="timer-display">
+                    <span id="timer">00:00:00</span>
+                    <button id="timer-control" class="timer-btn">Pause</button>
+                </div>
             </div>
         </div>
         <div class="nav-items">
@@ -42179,15 +42223,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M9 18l6-6-6-6"/>
                 </svg>
-            </button>
-        </div>
-    </div>
-
-    <div class="timer-container">
-        <div class="timer-display">
-            <span id="timer">00:00:00</span>
-            <button id="timer-control" class="timer-btn">
-                Pause
             </button>
         </div>
     </div>
