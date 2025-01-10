@@ -29621,37 +29621,37 @@
                             <div class="tips-content">
     <div class="tips-title">Hướng dẫn giải câu hỏi</div>
     <div class="tips-step"><strong>Bước 1: Xác định yêu cầu đề bài</strong><br>
-        Nội dung: Đề bài yêu cầu phát triển một quy trình để huấn luyện và chạy mô hình tùy chỉnh trong môi trường sản xuất, đồng thời cần có khả năng hiển thị nguồn gốc (lineage) của mô hình và dự đoán.<br>
-        Yêu cầu: Chọn phương pháp đảm bảo khả năng hiển thị nguồn gốc của mô hình và dự đoán.<br>
+        Nội dung: Đề bài yêu cầu phát triển quy trình huấn luyện và chạy mô hình tùy chỉnh trong môi trường sản xuất, cần có khả năng hiển thị lineage (dòng dõi) của mô hình và dự đoán.<br>
+        Yêu cầu: Chọn phương pháp có thể hiển thị lineage cho mô hình và dự đoán.<br>
         Số lựa chọn đúng: 1
     </div>
     <div class="tips-step"><strong>Bước 2: Phân tích key points</strong><br>
-        Key point 1: Khả năng hiển thị nguồn gốc (lineage) của mô hình.<br>
-        Key point 2: Khả năng hiển thị nguồn gốc của dự đoán.<br>
-        Key point 3: Sử dụng Vertex AI để huấn luyện và dự đoán.
+        Key point 1: Hiển thị lineage cho mô hình.<br>
+        Key point 2: Hiển thị lineage cho dự đoán.<br>
+        Key point 3: Sử dụng các công cụ của Vertex AI để đạt được điều này.
     </div>
     <div class="tips-step"><strong>Bước 3: Phân tích đánh giá sự phù hợp của các câu trả lời</strong><br>
-        - Đáp án A: Create a Vertex AI managed dataset, use a Vertex AI training pipeline, generate batch predictions in Vertex AI.<br>
-        Suy luận: Sử dụng dataset và pipeline của Vertex AI có thể hỗ trợ một phần việc hiển thị lineage, nhưng không đảm bảo đầy đủ cho cả mô hình và dự đoán.<br>
-        Đánh giá: Không phù hợp. Chưa đảm bảo đủ yêu cầu về lineage.<br>
-        - Đáp án B: Use a Vertex AI Pipelines custom training job component, generate predictions using a Vertex AI Pipelines model batch predict component.<br>
-        Suy luận: Sử dụng Vertex AI Pipelines cho phép theo dõi toàn bộ quy trình từ huấn luyện đến dự đoán, đảm bảo khả năng hiển thị lineage cho cả mô hình và dự đoán.<br>
-        Đánh giá: Phù hợp. Đáp ứng đầy đủ yêu cầu về lineage.<br>
-        - Đáp án C: Upload dataset to BigQuery, use a Vertex AI custom training job, generate predictions using Vertex AI SDK custom prediction routines.<br>
-        Suy luận: Sử dụng BigQuery và SDK có thể không cung cấp đầy đủ khả năng theo dõi lineage trong quy trình.<br>
-        Đánh giá: Không phù hợp. Thiếu khả năng theo dõi lineage.<br>
-        - Đáp án D: Use Vertex AI Experiments, register model in Vertex AI Model Registry, generate batch predictions in Vertex AI.<br>
-        Suy luận: Sử dụng Experiments và Model Registry có thể hỗ trợ một phần việc theo dõi lineage, nhưng không đầy đủ cho cả mô hình và dự đoán.<br>
-        Đánh giá: Không phù hợp. Chưa đủ khả năng theo dõi lineage.
+        - Đáp án A: Create a Vertex AI managed dataset, use a Vertex AI training pipeline to train your model, generate batch predictions in Vertex AI.<br>
+        Suy luận: Mặc dù sử dụng Vertex AI, nhưng không có thông tin về việc theo dõi lineage.<br>
+        Đánh giá: Không phù hợp. Không đề cập đến lineage.<br>
+        - Đáp án B: Use a Vertex AI Pipelines custom training job component to train your model, generate predictions by using a Vertex AI Pipelines model batch predict component.<br>
+        Suy luận: Cách tiếp cận này không đề cập đến việc theo dõi lineage.<br>
+        Đánh giá: Không phù hợp. Không đề cập đến lineage.<br>
+        - Đáp án C: Upload your dataset to BigQuery, use a Vertex AI custom training job to train your model, generate predictions by using Vertex AI SDK custom prediction routines.<br>
+        Suy luận: Không có thông tin về việc theo dõi lineage.<br>
+        Đánh giá: Không phù hợp. Không đề cập đến lineage.<br>
+        - Đáp án D: Use Vertex AI Experiments to train your model, register your model in Vertex AI Model Registry, generate batch predictions in Vertex AI.<br>
+        Suy luận: Vertex AI Experiments cho phép theo dõi và so sánh kết quả của các lần huấn luyện mô hình, tự động ghi lại metadata như hyperparameters, metrics, và artifacts.<br>
+        Đánh giá: Phù hợp. Đáp ứng yêu cầu về việc theo dõi lineage.
     </div>
     <div class="tips-step"><strong>Bước 4: Dự đoán khả năng đúng của các đáp án</strong><br>
-        - Lựa chọn A: Khả năng đúng thấp do thiếu khả năng theo dõi lineage đầy đủ.<br>
-        - Lựa chọn B: Khả năng đúng cao vì đáp ứng đầy đủ yêu cầu về lineage.<br>
-        - Lựa chọn C: Khả năng đúng thấp do thiếu khả năng theo dõi lineage.<br>
-        - Lựa chọn D: Khả năng đúng thấp do chưa đủ khả năng theo dõi lineage.
+        - Lựa chọn A: Khả năng đúng thấp do không đề cập đến lineage.<br>
+        - Lựa chọn B: Khả năng đúng thấp do không đề cập đến lineage.<br>
+        - Lựa chọn C: Khả năng đúng thấp do không đề cập đến lineage.<br>
+        - Lựa chọn D: Khả năng đúng cao vì đáp ứng yêu cầu về việc theo dõi lineage.
     </div>
     <div class="tips-step"><strong>Bước 5: Chọn ra câu trả lời cho câu hỏi</strong><br>
-        Lựa chọn B là câu trả lời đúng vì nó cung cấp khả năng hiển thị nguồn gốc đầy đủ cho cả mô hình và dự đoán.
+        Lựa chọn D là câu trả lời đúng vì nó cung cấp một cách tiếp cận có khả năng theo dõi lineage cho mô hình và dự đoán.
     </div>
 </div>
                         </div>
